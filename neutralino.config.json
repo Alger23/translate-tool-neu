@@ -1,5 +1,5 @@
 {
-  "applicationId": "js.neutralino.sample",
+  "applicationId": "translate-neu-google",
   "port": 0,
   "defaultMode": "window",
   "enableHTTPServer": true,
@@ -11,7 +11,7 @@
   },
   "modes": {
     "window": {
-      "title": "translate-neu",
+      "title": "Translate Tools",
       "width": 800,
       "height": 500,
       "minWidth": 400,
@@ -27,7 +27,7 @@
     "cloud": {}
   },
   "cli": {
-    "binaryName": "translate-neu",
+    "binaryName": "translate-google",
     "resourcesPath": "/resources/",
     "clientLibrary": "/public/js/neutralino.js",
     "binaryVersion": "2.8.0",
