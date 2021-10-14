@@ -7,11 +7,5 @@ export enum UserSettingsActionTypes {
   SAVE_USER_SETTINGS_SUCCESS = "[UserSettings] Save from storage success",
   SAVE_USER_SETTINGS_FAILURE = "[UserSettings] Save from storage failure",
 
-  GET_USER_SETTINGS = "[UserSettings] Get settings",
-  GET_USER_SETTINGS_SUCCESS = "[UserSettings] Get settings success",
-  GET_USER_SETTINGS_FAILURE = "[UserSettings] Get settings failure",
-
-  SET_USER_SETTINGS = "[UserSettings] Set settings",
-  SET_USER_SETTINGS_SUCCESS = "[UserSettings] Set settings",
-  SET_USER_SETTINGS_FAILURE = "[UserSettings] Set settings",
+  RESET_USER_SETTINGS = "[UserSettings] Reset user settings ",
 }

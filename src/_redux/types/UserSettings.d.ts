@@ -55,10 +55,15 @@ export interface SaveUserSettingsFailure {
   payload: {error: string}
 }
 
+export interface ResetUserSettings {
+  type: typeof UserSettingsActionTypes.RESET_USER_SETTINGS
+}
+
 export type UserSettingsActions =
   LoadUserSettings |
   LoadUserSettingsSuccess |
   LoadUserSettingsFailure |
   SaveUserSettings |
   SaveUserSettingsSuccess |
-  SaveUserSettingsFailure;
+  SaveUserSettingsFailure |
+  ResetUserSettings;

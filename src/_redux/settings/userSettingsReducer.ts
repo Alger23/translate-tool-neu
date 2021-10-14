@@ -33,6 +33,8 @@ export const userSettingsReducer = (state = initialState, action: UserSettingsAc
       return {...state, userSettings: action.payload.userSettings, success: true, error: null}
     case UserSettingsActionTypes.SAVE_USER_SETTINGS_FAILURE:
       return {...state, success: false, error: action.payload.error}
+    case UserSettingsActionTypes.RESET_USER_SETTINGS:
+      return {...state, userSettings: {...initialState.userSettings}}
     default:
       return state;
   }
@@ -54,12 +56,15 @@ export const userSettingsActions = {
     type: UserSettingsActionTypes.SAVE_USER_SETTINGS,
     payload: {userSettings}
   }),
-  saveUserSettingsSuccess: (useSettings: IUserSettings) => ({
+  saveUserSettingsSuccess: (userSettings: IUserSettings) => ({
     type: UserSettingsActionTypes.SAVE_USER_SETTINGS_SUCCESS,
-    payload: {useSettings}
+    payload: {userSettings}
   }),
   saveUserSettingsFailure: (errorMessage: string) => ({
     type: UserSettingsActionTypes.SAVE_USER_SETTINGS_FAILURE,
     payload: {error: errorMessage}
+  }),
+  resetUserSettings: ()=>({
+    type: UserSettingsActionTypes.RESET_USER_SETTINGS
   }),
 };
