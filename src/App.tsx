@@ -3,10 +3,12 @@ import './App.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import {styled} from '@mui/material/styles';
+import {styled, ThemeProvider} from '@mui/material/styles';
 import Settings from "./pages/settings/Settings";
 import {userSettingsActions} from "./_redux/settings/userSettingsReducer";
 import {connect, ConnectedProps} from "react-redux";
+import Translate from "./pages/translate/Translate";
+import {createTheme} from "@mui/material";
 
 const CustomTab = styled(Tab)({
   textTransform: "none"
@@ -58,10 +60,17 @@ function a11yProps(index: number) {
   };
 }
 
+const theme = createTheme({
+  typography: {
+    button: {
+      textTransform: 'none'
+    }
+  }
+});
 
 function App(props: Props) {
   const [value, setValue] = React.useState<number>(0);
-  debugger
+
   props.loadUserSettings();
 
   const handleChange = (event: SyntheticEvent, newValue: any) => {
@@ -70,22 +79,24 @@ function App(props: Props) {
 
 
   return (
-    <div className="App">
-      <Box sx={{width: '100%'}}>
-        <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
-          <Tabs value={value} onChange={handleChange} aria-label="Main tabs" centered>
-            <CustomTab label="Translate" {...a11yProps(0)} />
-            <CustomTab label="Settings" {...a11yProps(1)} />
-          </Tabs>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Box sx={{width: '100%'}}>
+          <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
+            <Tabs value={value} onChange={handleChange} aria-label="Main tabs" centered>
+              <CustomTab label="Translate" {...a11yProps(0)} />
+              <CustomTab label="Settings" {...a11yProps(1)} />
+            </Tabs>
+          </Box>
+          <TabPanel value={value} index={0}>
+            <Translate/>
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <Settings/>
+          </TabPanel>
         </Box>
-        <TabPanel value={value} index={0}>
-
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <Settings/>
-        </TabPanel>
-      </Box>
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

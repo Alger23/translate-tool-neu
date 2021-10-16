@@ -1,7 +1,7 @@
 {
   "applicationId": "translate-neu-google",
   "port": 0,
-  "defaultMode": "browser",
+  "defaultMode": "window",
   "enableHTTPServer": true,
   "enableNativeAPI": true,
   "url": "/resources/",
