@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Translate-Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](./app.png)
+
+> In order to create a Google Translate API Key, you need a paid account. 
+> Through their terms and services, Google doesn’t allow for non-paid usage 
+> of their Translation API.
+> More information is available at: [https://cloud.google.com/translate/](https://cloud.google.com/translate/)
+
+# Getting Started
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [Neutralinojs](https://neutralino.js.org/)
 
 ## Available Scripts
 
@@ -8,18 +17,26 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode.\
+Run the Neutralinojs app in development mode. But React app with build. If you changes react app, you will need to stop and `yarn start` again.
+
+### `yarn build`
+
+Build the neu app into `./dist` folder.
+
+### `yarn react-start`
+
+Runs the react app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `yarn react-test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `yarn react-build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +46,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `yarn react-eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -45,15 +62,15 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+# Neutralinojs
 
-
-# neutralinojs-minimal
+## neutralinojs-minimal
 The simplest template for a Neutralinojs app. It's possible to use your favorite frontend framework using the following steps.
 
 - Create a new project using your favorite frontend framework. (Eg: `ng new --directory .`)
 - Make the frontend framework's build path and Neutralino config's `url`, `resourcesPath` the same.
 - Build with the correct base href.
 
-# Icon credits
+## Icon credits
 
 - `trayIcon.png` - Made by [Freepik](https://www.freepik.com) and downloaded from [Flaticon](https://www.flaticon.com)
